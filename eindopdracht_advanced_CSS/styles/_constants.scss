@@ -1,0 +1,15 @@
+//variabele
+$color-grijs: #c3cfe2;
+$color-wit: #fff;
+$color-paars-blauw: #686de0;
+$color-licht-wit: rgba(255, 255, 255, 0.5);
+$color-zacht-grijs: rgba(72, 75, 79, 0.7);
+$color-btn-grijs: #404040;
+$text-standard: sans-serif;
+
+@mixin flex-center-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

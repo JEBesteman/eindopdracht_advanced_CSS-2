@@ -1,0 +1,141 @@
+@import "constants";
+//later alle partials importeren!!!!
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  background: $color-grijs;
+}
+
+/*testimonial section*/
+
+.testimonial-container {
+  @include flex-center-column();
+}
+
+.testimonial {
+  position: relative;
+  width: 400px;
+  height: 540px;
+  border-radius: 20px;
+  box-shadow: 0 5px 10px 5px rgba(0, 0, 0, 0.3);
+  margin: 50px;
+  text-align: center;
+  &__main {
+    background: $color-wit;
+    height: 360px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    & p {
+      padding: 35px 30px 75px;
+      font-family: $text-standard;
+      font-size: 20px;
+      font-weight: 600;
+      color: $color-zacht-grijs;
+      line-height: 1.8em;
+      text-align: left;
+    }
+  }
+  &__footer {
+    background: $color-paars-blauw;
+    height: 180px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    & img {
+      width: 130px;
+      height: 130px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 6px solid $color-wit;
+      margin-top: 10px;
+      position: relative;
+      transform: translateY(-75px);
+    }
+    & h2 {
+      padding-top: 10px;
+      font-family: $text-standard;
+      color: $color-wit;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 400;
+      margin-bottom: 10px;
+      position: relative;
+      transform: translateY(-75px);
+    }
+    & p {
+      position: relative;
+      transform: translateY(-75px);
+      color: $color-licht-wit;
+      font-family: $text-standard;
+      font-size: 20px;
+    }
+  }
+}
+
+/*grid section*/
+.portfolio-container {
+  @include flex-center-column();
+}
+
+.portfolio-grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  column-gap: 20px;
+  row-gap: 20px;
+  max-width: 90vw;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 50px;
+  &__item {
+    position: relative;
+    &__image {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      border-radius: 20px;
+    }
+    &__button {
+      background-color: $color-btn-grijs;
+      width: 100%;
+      height: 100%;
+      border-radius: 20px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      transition: opacity 500ms ease;
+      &:hover {
+        opacity: 1;
+      }
+      & button {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%);
+        font-family: $text-standard;
+        color: $color-btn-grijs;
+        font-size: 0.8em;
+        font-weight: 600;
+        padding: 5px 10px;
+        border-radius: 7px;
+      }
+    }
+  }
+}
+/*tablet grid*/
+@media screen and (min-width: 768px) {
+  .portfolio-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/*desktop grid*/
+@media screen and (min-width: 1024px) {
+  .portfolio-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
